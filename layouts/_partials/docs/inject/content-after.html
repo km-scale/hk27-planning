@@ -1,0 +1,9 @@
+{{- /* Load KaTeX on every page so $...$ / $$...$$ math "just works" without a per-page shortcode. */ -}}
+{{- if not (.Page.Store.Get "katex") -}}
+  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}" />
+  <script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
+  {{- with resources.Get "katex.json" | minify -}}
+  <script defer src="{{ "katex/auto-render.min.js" | relURL }}" onload="renderMathInElement(document.body, {{ .Content | safeJS }});"></script>
+  {{- end -}}
+  {{- .Page.Store.Set "katex" true -}}
+{{- end -}}
