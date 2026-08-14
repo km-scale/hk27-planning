@@ -1,0 +1,22 @@
+baseURL = 'https://km-scale.github.io/hk27-planning/'
+locale = 'en-us'
+title = 'HK27 Planning'
+theme = 'hugo-book'
+
+# Book theme config
+disablePathToLower = true
+enableGitInfo = true
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  BookTheme = 'auto' # auto | light | dark
+  BookToC = true
+  BookSection = 'docs'
+  BookRepo = 'https://github.com/km-scale/hk27-planning'
+  BookEditPath = 'edit/main'
+  BookSearch = true
+  BookComments = false
+  BookPortableLinks = true
