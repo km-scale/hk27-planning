@@ -132,27 +132,6 @@ We will document workflows with tutorials (notebooks), the Python environment an
 It is up to individual nodes to determine the user-facing part.
 JupyterHub is recommended as the IDE platform.
 
-## Planning Process/Meetings
-
-- We envision a technical planning process and a node planning process.
-
-- We are planning first for data preparation and a technical hackathon on 11--15 January 2027.
-  This might be a hybrid meeting with locations in Boulder and Barcelona.
-  We would like a list of technical contacts and a list of contacts for each dataset.
-  Observational datasets are invited to be part of this process.
-
-- There will also be a planning process for tooling (see above).
-  This process will be a bit later, and could happen 12--16 April 2027 (the week after EGU).
-
-- A technical node support process will also happen.
-  Additional virtual and even in-person support (traveling to nodes in advance by technical staff) could be provided as needed.
-
-- Overall logistical support can be provided from MPI-M, DKRZ, and the WCRP Digital Earth Lighthouse Activity (Contacts: Elina Plesca <elina.plesca@mpimet.mpg.de>, Florian Ziemen <ziemen@dkrz.de>, Andrew Gettelman <andrew.gettelman@colorado.edu>).
-
-
-
-
-
 
 
 ## Appendix: Terminology
