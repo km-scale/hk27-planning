@@ -12,7 +12,7 @@ The default tool for data analysis will again be Python with a shared environmen
 
 The key changes are:
 
-* Aggregation hierarchies represented as datatrees inside the Zarr dataset, instead of parameters in the catalog.
+* Aggregation hierarchies represented as subgroups inside the Zarr dataset, instead of parameters in the catalog.
 * STAC instead of Intake as catalog standard.
 * Zarr v3 with sharding instead of Zarr v2 (resolves issues with too many files on HPC file systems).
 * Using the Earth's ellipsoid as base for the HEALPix grid instead of the sphere.
@@ -80,8 +80,8 @@ Sharding should be chosen to adapt file count and size to the requirements of th
 
 ### Data Conversion
 
-DKRZ already has some scripts for data conversion that will be evolved.
 The goal is to assist with data conversion to HEALPix with Python scripts.
+DKRZ already has some scripts for data conversion that will be evolved.
 Test data can be sent to DKRZ (access to Levante can be provided) to optimize workflow for any model.
 The goal is to have a contact person for each dataset, and start working with them in Northern Hemisphere Fall 2026.
 A technical hackathon in January 2027 is being planned to support and facilitate data conversion tools to help modeling centers.
