@@ -24,7 +24,10 @@ The key changes are:
 The data is requested on a HEALPix multi-resolution grid.
 For the details of the coordinate reference system chosen for the HEALPix grid, see the [grid specifications](https://pad.gwdg.de/JLI_XMEYQ_GAzHZPIzthfw) document.
 
-HEALPix supports different indexing schemes, of which we use the NESTED scheme.
+HEALPix supports different indexing schemes, of which we use the NESTED scheme. 
+It groups child cells beneath their parents and preserves hierarchical and spatial locality.
+The scheme is defined in the foundational HEALPix paper by [Górski et al. (2005)](https://doi.org/10.1086/427976).
+It is the chosen indexing scheme for this specification because it is well suited to hierarchy-aligned chunking and multi-resolution operations.
 The indexing scheme must always be recorded in the CF-standard way because the same integer refers to different cells under different schemes, and only with recorded indexing, tools can automatically select the appropriate scheme.
 
 
@@ -64,7 +67,7 @@ Sharding should be chosen to adapt file count and size to the requirements of th
   S3 is a protocol that is known to work.
   DKRZ has a Versity S3 Gateway that runs on POSIX (could be a temporary service).
 
-- Data retention/archiving: We request access to the data for at least 1--2 years.
+- Data retention/archiving: We request access to the data for at least 2 years.
   It takes about 2 years to write, submit, review and publish a paper after the hackathon.
   Each center can propose a time for how data will be stored and in what location (object, disk, tape).
   We will work to standardize the data retention.
@@ -82,7 +85,8 @@ Sharding should be chosen to adapt file count and size to the requirements of th
 
 The goal is to assist with data conversion to HEALPix with Python scripts.
 DKRZ already has some scripts for data conversion that will be evolved.
-Test data can be sent to DKRZ (access to Levante can be provided) to optimize workflow for any model.
+Test data can be sent to DKRZ (access to Levante can be provided) to optimize workflow for any model. 
+Online-available data can be tested directly.
 The goal is to have a contact person for each dataset, and start working with them in Northern Hemisphere Fall 2026.
 A technical hackathon in January 2027 is being planned to support and facilitate data conversion tools to help modeling centers.
 
@@ -94,7 +98,7 @@ Recognizing that people might produce multiple Zarr stores during the data conve
 
 The catalog will use STAC.
 There will be one entry per model simulation or observation (*dataset*).
-A backward compatible Intake catalog could be developed.
+Intake catalogs could be derived automatically from the STAC catalog.
 Satellite observations or analyses (ERA5) formatted to HEALPix will also be added to the catalog.
 
 
@@ -146,28 +150,3 @@ Chunk layout should follow expected access patterns and, where practical, the sp
 
 A **shard** in Zarr v3 is a larger storage object containing multiple chunks.
 Sharding can reduce the number of small objects while retaining chunk-level access inside the shard.
-
-
-### HEALPix Grids
-
-- **NESTED** indexing groups child cells beneath their parents and preserves hierarchical and spatial locality.
-  The scheme is defined in the foundational HEALPix paper by [Górski et al. (2005)](https://doi.org/10.1086/427976).
-  It is the chosen indexing scheme for this specification because it is well suited to hierarchy-aligned chunking and multi-resolution operations.
-- **RING** indexing orders cells along iso-latitude rings.
-  It is useful for spherical analysis algorithms, but it is not permitted for datasets conforming to this exchange specification.
-  Source data in RING ordering must be converted to an allowed scheme before publication; conversion to NESTED is required.
-- **NUNIQ** combines the refinement level and NESTED index in one identifier such that the cell ids pass through the cell hierarchy breadth-first.
-  It permits cells from multiple refinement levels in the same coordinate, with spatial locality mainly within each level.
-  As we plan to address different refinement levels as a datatree within the Zarr store, this ordering is not appropriate.
-- **ZUNIQ** also combines multiple refinement levels, but orders cells along a Z-order curve (depth-first) to preserve spatial locality across levels.
-  As we plan to address different refinement levels as a datatree within the Zarr store, this ordering is not appropriate.
-
-
-
-
-The **refinement level** describes the position in the HEALPix hierarchy.
-Increasing the level subdivides every cell into four children, increasing the number of cells and decreasing their area.
-Level 0 splits the sphere into 12 equal-area diamonds.
-
-**Spatial resolution** describes the effective spatial detail of a dataset.
-A HEALPix refinement level has a characteristic cell scale; this may or may not correspond to the level of detail that is available in the source of the information.
