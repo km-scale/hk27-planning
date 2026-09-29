@@ -9,7 +9,7 @@ weight: 1
 |---|---|---|---|---|
 | ICON | MPI-M | Global | | Stevens/Klocke | 
 | ICON-Other | Various | | -ART,-DWD,-HAM, -NWP ? | | 
-| UM | MetOffice/NCAS | Global | | Vidale+? | 
+| UM | MetOffice/NCAS | Global | | R Jones / C Scullion / PL Vidale | 
 | SCREAM | DOE | Global |  | Gettelman/Hillman/Terai | 
 | NICAM | U. Tokyo | Global | | Takasuka/Satoh | 
 | CAS-ESM2 | IAP | Global | | Fei/Zeng | 
