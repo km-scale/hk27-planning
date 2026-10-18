@@ -31,6 +31,7 @@ It is the chosen indexing scheme for this specification because it is well suite
 The indexing scheme must always be recorded in the CF-standard way because the same integer refers to different cells under different schemes, and only with recorded indexing, tools can automatically select the appropriate scheme.
 The reference ellipsoid must be recorded in the same way, with its parameters (for WGS 84: `semi_major_axis = 6378137.0`, `inverse_flattening = 298.257223563`), both in the CF grid mapping (`reference_ellipsoid_name`, `semi_major_axis`, `inverse_flattening`) and in the Zarr `dggs` convention (`ellipsoid.name`, `ellipsoid.semi_major_axis`, `ellipsoid.inverse_flattening`).
 The spelling of the ellipsoid name differs between conventions: CF (via the EPSG names) and PROJJSON write `WGS 84` with a space, while PROJ and the example of the `dggs` convention write `WGS84`. In the Zarr `dggs` metadata the name is written `WGS84`; the translation to the CF spelling is proposed to be done by xdggs when encoding to CF (under discussion in [xarray-contrib/xdggs#277](https://github.com/xarray-contrib/xdggs/issues/277)). Tools should rely on the parameters and not on the name string.
+CF also requires `prime_meridian_name`, `horizontal_datum_name` and `geographic_crs_name` to be defined whenever `reference_ellipsoid_name` is; if they are not available, record only the parameters.
 
 
 #### Multi-resolution representation
