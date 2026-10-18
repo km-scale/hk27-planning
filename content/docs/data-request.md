@@ -32,7 +32,7 @@ The 2-20 TiB guidelines allows the data to be comfortably managed and sustained 
 
 ### Spatial Grids
 
-Basic putput should be on ellipsoidal HEALPix grid refinement level 8 or larger. We denote this by L$n$ to denote $12 (4)^n$ HEALPix grid-cells tiling the ellipsoid.  Thus refinement level 8 (L8) corresponds to about a 25km grid. For 4byte output with twofold compression, and a factor of 4/3 to store the whole hierarchy, this results in a global field being: $$ 12\cdot4^8 \cdot 32\,\text{bit} \cdot \frac{1}{2} \cdot \frac{4}{3}  \approx 2\,\mathrm{MiB}$$
+Basic output should be on ellipsoidal HEALPix grid refinement level 8 or larger. We denote this by L$n$ to denote $12 (4)^n$ HEALPix grid-cells tiling the ellipsoid.  Thus refinement level 8 (L8) corresponds to about a 25km grid. For 4byte output with twofold compression, and a factor of 4/3 to store the whole hierarchy, this results in a global field being: $$ 12\cdot4^8 \cdot 32\,\text{bit} \cdot \frac{1}{2} \cdot \frac{4}{3}  \approx 2\,\mathrm{MiB}$$
 
 #### 25 Atmospheric Levels
 Atmospheric output of 3D fields on a *minimum* of 25 pressure levels (units: hPa): 
@@ -88,7 +88,7 @@ Some scenarios are outlined below:
 
 * **10 year run:** This would reduce the 30 year data request to 6.7 TiB
 
-* **5 year run:** Would reduce the 30 year data request to 4.2 TiB, so that all data could be written at HEALPix reference level 9, and the data request would still only be less than 17 TiB.
+* **5 year run:** Would reduce the 30 year data request to 4.2 TiB, so that all data could be written at HEALPix refinement level 9, and the data request would still only be less than 17 TiB.
 
 
 ## 2D Fields

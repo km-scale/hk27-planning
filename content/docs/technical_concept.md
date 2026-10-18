@@ -29,6 +29,8 @@ It groups child cells beneath their parents and preserves hierarchical and spati
 The scheme is defined in the foundational HEALPix paper by [Górski et al. (2005)](https://doi.org/10.1086/427976).
 It is the chosen indexing scheme for this specification because it is well suited to hierarchy-aligned chunking and multi-resolution operations.
 The indexing scheme must always be recorded in the CF-standard way because the same integer refers to different cells under different schemes, and only with recorded indexing, tools can automatically select the appropriate scheme.
+The reference ellipsoid must be recorded in the same way, with its name written `WGS84` (uppercase, no space) together with its parameters (`semi_major_axis = 6378137.0`, `inverse_flattening = 298.257223563`), both in the CF grid mapping (`reference_ellipsoid_name`, `semi_major_axis`, `inverse_flattening`) and in the Zarr `dggs` convention (`ellipsoid.name`, `ellipsoid.semi_major_axis`, `ellipsoid.inverse_flattening`).
+Tools compare the name string against other sources, and producers currently write `wgs84`, `WGS84` or nothing at all.
 
 
 #### Multi-resolution representation
