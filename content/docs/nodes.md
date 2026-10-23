@@ -18,7 +18,7 @@ weight: 1
 | Leeds (MO as backup) | UK	|	MetOffice/UoR |	JASMIN	 | PL Vidale / R Jones / M Mutzfeldeldt |	p.l.vidale@reading.ac.uk | |
 | Sao Paulo	| Brazil |	USP	USP/INPE | |	Rosmeri Porfirio Rocha |	rosmerir.rocha@iag.usp.br | |
 | Shanghai | | | | | | Contact Chao Li, MPI |
-| Tokyo? | Japan | JAMSTEC? | | Masaki Satoh, Chihiro Kodama | satoh@aori.u-tokyo.ac.jp, kodamac@jamstec.go.jp  | |
+| Yokohama | Japan | JAMSTEC | | Masaki Satoh, Chihiro Kodama | satoh@aori.u-tokyo.ac.jp, kodamac@jamstec.go.jp  | |
 | Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein | <andreas.prein@env.ethz.ch> | |
 |  |Argentina| | | | | | 
 |  |India | | | | | | 
