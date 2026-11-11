@@ -19,11 +19,12 @@ weight: 1
 | Manila | Philippines |	UP / PAGASA | |			Jane Delfino / Aleguen, Mary Cris |	rpdelfino@up.edu.ph | |
 | Princeton | US | Princeton/GFDL | GFDL | Lucas Harris, Tim Merlis | lucas.harris@noaa.gov, tmerlis@princeton.edu | | 
 | Sao Paulo	| Brazil |	USP	USP/INPE | |	Rosmeri Porfirio Rocha |	rosmerir.rocha@iag.usp.br | |
-| Shanghai | | | | | | Contact Chao Li, MPI |
+| Shanghai | China | Fudan University | | Libo Wu, Shan Guo, Xiansheng Wang | guoshan@sais.org.cn, wangxiansheng@sais.org.cn | Prof. Wu will lead. Guo and Xiansheng are local organization and contacts |
 | Yokohama | Japan | JAMSTEC and Univ. Tokyo | JHPCN/mdx | Chihiro Kodama, Masaki Satoh | kodamac@jamstec.go.jp, satoh@aori.u-tokyo.ac.jp   | |
 | Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein | <andreas.prein@env.ethz.ch> | |
 |  |India | | | | | | 
 |  |Nairobi | | | | | | 
+||||||||
 
 # Other Collaborations
 
