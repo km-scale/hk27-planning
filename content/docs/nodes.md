@@ -11,7 +11,7 @@ weight: 1
 | Boulder |	USA	| CU/NCAR | NCAR | Aneesh Subaraamain, CU; John Clyne, NCAR | <aneeshcs@colorado.edu> <clyne@ucar.edu> | |
 | Buenos Aires |Argentina| Univ. Buenos Aires | | Lluís Fita |  <lluis.fita@cima.fcen.uba.ar> | | 
 | Busan |Korea| ICCP | | June-Yi Lee | juneyi@pusan.ac.kr | | 
-| Cape Town | S. Africa | U. Witswatersand? | | François Engelbrecht |	francois.Engelbrecht@wits.ac.za | |
+| Cape Town | S. Africa | U. Witswatersand? | | François Engelbrecht, Jessica Steinkopf |	francois.Engelbrecht@wits.ac.za, jessica.steinkopf@wits.ac.za | Jessica is technical contact |
 | Cologne | Germany | University of Cologne | DKRZ | Elina Plesca, Vera Schemann | vera.schemann@uni-koeln.de, elina.plesca@mpimet.mpg.de | |
 | Darmstadt	| Germany | EUMETSAT | EUMETSAT | Frank Kaspar | frank.kaspar@eumetsat.int  | |
 | Leeds (MO as backup) | UK	|	MetOffice/UoR |	JASMIN	 | PL Vidale / R Jones / M Mutzfeldeldt |	p.l.vidale@reading.ac.uk | |
