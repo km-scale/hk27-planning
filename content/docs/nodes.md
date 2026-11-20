@@ -11,15 +11,16 @@ weight: 1
 | Boulder |	USA	| CU/NCAR | NCAR | Aneesh Subaraamain, CU; John Clyne, NCAR | <aneeshcs@colorado.edu> <clyne@ucar.edu> | |
 | Buenos Aires |Argentina| Univ. Buenos Aires | | Lluís Fita |  <lluis.fita@cima.fcen.uba.ar> | | 
 | Busan |Korea| ICCP | | June-Yi Lee | juneyi@pusan.ac.kr | | 
-| Cape Town | S. Africa | U. Witswatersand? | | François Engelbrecht, Jessica Steinkopf |	francois.Engelbrecht@wits.ac.za, jessica.steinkopf@wits.ac.za | Jessica is technical contact |
+| Cape Town | S. Africa | U. Witswatersand? | | François Engelbrecht / Jessica Steinkopf |	francois.Engelbrecht@wits.ac.za, jessica.steinkopf@wits.ac.za | Jessica is technical contact |
 | Cologne | Germany | University of Cologne | DKRZ | Elina Plesca, Vera Schemann | vera.schemann@uni-koeln.de, elina.plesca@mpimet.mpg.de | |
 | Darmstadt	| Germany | EUMETSAT | EUMETSAT | Frank Kaspar | frank.kaspar@eumetsat.int  | |
-| Leeds (MO as backup) | UK	|	MetOffice/UoR |	JASMIN	 | PL Vidale / R Jones / M Mutzfeldeldt |	p.l.vidale@reading.ac.uk | |
+| Leeds (MO as backup) | UK	|	MetOffice/UoR |	JASMIN	 | PL Vidale / R Jones / M Mutzfeldeldt |	p.l.vidale@reading.ac.uk, mark.muetzelfeldt@reading.ac.uk | |
 | Lima | Peru | | | Laura Paccini | lpaccini@pucp.edu.pe | |
-| Manila | Philippines |	UP / PAGASA | |			Jane Delfino / Aleguen, Mary Cris |	rpdelfino@up.edu.ph | |
+| Manila | Philippines |	UP / PAGASA | |			Jane Delfino / Aleguen, Mary Cris |	rpdelfino@up.edu.ph, mary-cris.aleguen@mpimet.mpg.de | |
 | Princeton | US | Princeton/GFDL | GFDL | Lucas Harris, Tim Merlis | lucas.harris@noaa.gov, tmerlis@princeton.edu | | 
 | Sao Paulo	| Brazil |	USP	USP/INPE | |	Rosmeri Porfirio Rocha |	rosmerir.rocha@iag.usp.br | |
 | Shanghai | China | Fudan University | | Libo Wu, Shan Guo, Xiansheng Wang | guoshan@sais.org.cn, wangxiansheng@sais.org.cn | Prof. Wu will lead. Guo and Xiansheng are local organization and contacts |
+| Sydney | Australia | UNSW/ARC Centre of Excellence | | Melissa Hart / Sam Green | melissa.hart@unsw.edu.au, sam.green@unsw.edu.au ||
 | Yokohama | Japan | JAMSTEC and Univ. Tokyo | JHPCN/mdx | Chihiro Kodama, Masaki Satoh | kodamac@jamstec.go.jp, satoh@aori.u-tokyo.ac.jp   | |
 | Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein | <andreas.prein@env.ethz.ch> | |
 |  |India | | | | | | 
