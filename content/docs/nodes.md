@@ -23,8 +23,8 @@ weight: 1
 | Sydney | Australia | UNSW/ARC Centre of Excellence | | Melissa Hart / Sam Green | melissa.hart@unsw.edu.au, sam.green@unsw.edu.au ||
 | Yokohama | Japan | JAMSTEC and Univ. Tokyo | JHPCN/mdx | Chihiro Kodama, Masaki Satoh | kodamac@jamstec.go.jp, satoh@aori.u-tokyo.ac.jp   | |
 | Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein | <andreas.prein@env.ethz.ch> | |
-|  |India | | | | | | 
-|  |Nairobi | | | | | | 
+| | India | | | | | |
+| Nairobi | Kenya | | | | | |
 ||||||||
 
 # Other Collaborations
