@@ -1,6 +1,6 @@
 /*
  * HEALPix dataset size calculator for the data-request page.
- * Pure functions are exported for Node tests (`node --test tests/`);
+ * Pure functions are exported for Node tests (`node --test "tests/*.test.js"`);
  * in the browser, the DOM wiring attaches to every `.size-calc` element.
  */
 (function (root) {
