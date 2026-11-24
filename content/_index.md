@@ -4,7 +4,7 @@ description: Planning for the 2027 Digital Earths Global km-scale Hackathon
 ---
 
 {{< hero title="km-Scale Hackathon 2027" lead="Digital Earths Global Hackathon · **June 7–11, 2027** · [many locations](nodes/) around the globe" >}}
-<a class="btn btn-primary btn-lg me-2 mb-2" href="technical/">Host a node</a>
+<a class="btn btn-primary btn-lg me-2 mb-2" href="technical/node-setup/">Host a node</a>
 <a class="btn btn-outline-primary btn-lg mb-2" href="simulations/data-request/">Contribute a simulation</a>
 {{< /hero >}}
 
