@@ -22,8 +22,8 @@ jobs:
       - name: Install Docsy npm dependencies
         run: pixi run npm-deps
 
-      - name: Lint and test scripts
-        run: pixi run lint && pixi run test
+      - name: Lint and test (Python scripts, JS)
+        run: pixi run lint && pixi run test && pixi run test-js
 
       - name: Build (redraws the node map first)
         run: pixi run build

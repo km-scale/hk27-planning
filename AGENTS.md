@@ -42,6 +42,25 @@ Pages. Toolchain (Hugo, Go, Node, Dart Sass, Python) is pinned in
   also run by `serve`/`build`). Commit the regenerated SVG; CI fails if it
   is stale.
 - Footer links: `params.footerLinks` in `hugo.toml`.
+- Size calculator: `{{< size-calculator >}}` (used in
+  `content/simulations/data-request.md`) is a project shortcode at
+  `layouts/_shortcodes/size-calculator.html` (markup + CSS). Its logic lives
+  in `assets/js/size-calculator.js` (vanilla JS, no deps; pure functions are
+  also exported via `module.exports`, tested by `pixi run test-js`). Model:
+  HEALPix `12·4^z` cells × domain fraction (optionally summed over coarser
+  zooms), Float32, user-set compressed size (% of raw, default 50).
+  Temporal hierarchy uses user-selected ladder steps (1h/3h/6h/1d/1mo/1y):
+  a *mean* stream is aggregated to every checked step coarser than its
+  interval; an *inst* stream must also exist as means at its own interval
+  and every checked coarser step, minus what its linked mean stream
+  ("Means in") already provides. A "Lock zoom" toggle makes all streams share one max zoom,
+  driven by the "One global 2D field at zoom" input. Default rows: 1-year
+  run, 3h atm means, daily ocean means, variable counts from the page's
+  tables — update them if the tables change.
+- Dev-server gotcha: `.Page.Store` survives `hugo server` rebuilds, so
+  "load once per page" guards built on it drop their output after the
+  first live reload. Don't use such guards in templates; the calculator
+  shortcode deliberately has none.
 
 ## Commands
 
@@ -50,12 +69,13 @@ pixi install && pixi run npm-deps   # once after clone / dependency changes
 pixi run serve                      # local preview; prints the URL
 pixi run build                      # production build -> ./public, fails on warnings
 pixi run lint && pixi run test      # ruff + pytest for scripts/
+pixi run test-js                    # node --test for assets/js
 ```
 
 ## CI/CD
 
 - [`.github/workflows/ci.yml`](.github/workflows/ci.yml): `pull_request`
-  targeting `main` → lint, test, build, map-freshness check, upload
+  targeting `main` → lint, test (Python + JS), build, map-freshness check, upload
   `./public` as workflow artifact `site` (7 days). No deploy.
 - [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): `push`
   to `main` → same build, deploy via `actions/deploy-pages`.

@@ -71,6 +71,12 @@ All time-mean data should be aggregated on monthly and annual intervals to form 
 
 ### Sizing the data request
 
+Use the calculator below to size your own output. It is prefilled with the
+a 1-year run at zoom 8 (3-hourly atmosphere means, daily ocean
+means); edit any value or add streams.
+
+{{< size-calculator >}}
+
 For 13 3D atmospheric fields on 25 levels, and 35 2D fields this corresponds to 360 atmospheric fields.  Allowing for another 280 ocean fields (8 on 33 levels, plus 16) and 10 land variables on 6 levels, gives 700 2D fields or 1.4 GiB per time-stamp.  
 
 Modelling centers would be free to dimension $\tau_\mathrm{i}$ and $\tau_\mathrm{m}$ based on the length of their run.  But the number of variables has been chosen to facilitate:
