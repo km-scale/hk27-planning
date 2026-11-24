@@ -1,9 +1,10 @@
 ---
 title: Models participating
-weight: 1
+linkTitle: Models
+weight: 10
+aliases: [/docs/models/]
 ---
 
-# Hackathon 2027: Models and Simulations
 
 | Model | Institution | Contact | Simulations |  |  |  |  |  |  |  |
 |---|---|---|---|---|---|---|---|---|---|---|

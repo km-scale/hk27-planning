@@ -1,12 +1,13 @@
 ---
 title: Data request
-weight: 2
+weight: 20
+aliases: [/docs/data-request/]
 ---
 
 This is a draft data request.
 
 
-# Basic idea
+## Basic idea
 
 The minimum output should be analysis ready (i.e., well indexed, hierarchical, sensibly chunked) and large-enough to be expressive, but small enough to be mangageable (2-20 TiB)
 

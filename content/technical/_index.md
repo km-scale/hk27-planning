@@ -1,6 +1,8 @@
 ---
 title: Technical Standards and Planning
-weight: 1
+linkTitle: Technical
+weight: 30
+aliases: [/docs/technical_concept/]
 ---
 
 
