@@ -22,7 +22,11 @@ year), not ad hoc.
    and hooks.
 3. Diff the Docsy files we depend on between the versions:
    - overridden: `_partials/footer/center.html` → our
-     `layouts/_partials/footer/center.html`;
+     `layouts/_partials/footer/center.html`; `_partials/head.html` → our
+     `layouts/_partials/head.html` (copy, only change: Lunr from
+     `static/js/lunr.min.js`, marked `hk27:`). Re-copy the new version and
+     reapply that change. If Docsy bumps Lunr, replace `static/js/lunr.min.js`
+     with that version and keep the `integrity` hash in step;
    - called: `_partials/scripts/math.html` (from our
      `layouts/_markup/render-passthrough.html`), `_shortcodes/blocks/section.html`;
    - Sass names used in `assets/scss/`: `$td-navbar-bg-color`,
@@ -35,9 +39,18 @@ year), not ad hoc.
 
 ## Third-party requests
 
-Pages load everything from the site itself, except Lunr for the search
-box (`unpkg.com`, hardcoded in Docsy's `_partials/head.html`). Removing it
-means overriding that whole template.
+None: fonts, KaTeX CSS/fonts and Lunr (search) are served from the site.
+Keep it that way (visitors' IP addresses would go to a third party; the
+site carries DKRZ's legal notice). Check a build (`pixi run build`)
+with:
+
+```sh
+grep -rhoE '(src=|rel=stylesheet[^>]*href=)"?https?://[^ >"]+' public --include='*.html' \
+  | grep -v 'km-scale.github.io/hk27-planning'
+grep -rhoE 'url\("?https?://[^)]+' public/scss public/css
+```
+
+Both should print nothing. Plain links to other sites are fine.
 
 ## Map and emblem
 
