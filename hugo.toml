@@ -1,11 +1,25 @@
 baseURL = 'https://km-scale.github.io/hk27-planning/'
 locale = 'en-us'
 title = 'HK27 Planning'
-theme = 'hugo-book'
-
-# Book theme config
 disablePathToLower = true
 enableGitInfo = true
+# Top navigation: the first-level sections (by weight), no hand-written menu entries.
+sectionPagesMenu = 'main'
+disableKinds = ['taxonomy', 'term']
+
+# Every page and section uses Docsy's docs layout (sidebar, TOC, breadcrumbs);
+# the home page keeps the full-width landing layout.
+[[cascade]]
+  type = 'docs'
+  [cascade.target]
+    kind = '{page,section}'
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.165.0'
+  [[module.imports]]
+    path = 'github.com/docsy/docsy/theme'
 
 [markup]
   [markup.goldmark.renderer]
@@ -15,13 +29,30 @@ enableGitInfo = true
     [markup.goldmark.extensions.passthrough.delimiters]
       block = [['\[', '\]'], ['$$', '$$']]
       inline = [['\(', '\)'], ['$', '$']]
+  [markup.tableOfContents]
+    startLevel = 2
+
+[outputs]
+  section = ['html']
 
 [params]
-  BookTheme = 'auto' # auto | light | dark
-  BookToC = true
-  BookSection = 'docs'
-  BookRepo = 'https://github.com/km-scale/hk27-planning'
-  BookEditPath = 'edit/main'
-  BookSearch = true
-  BookComments = false
-  BookPortableLinks = true
+  description = 'Planning for the 2027 Digital Earths Global km-scale Hackathon'
+  copyright = 'HK27 organizing team'
+  github_repo = 'https://github.com/km-scale/hk27-planning'
+  github_branch = 'main'
+  offlineSearch = true
+  # Footer links (layouts/_partials/footer/center.html)
+  footerLinks = [
+    { name = 'Legal Notice', url = 'https://www.dkrz.de/de/about/kontakt/impressum' },
+    { name = 'Privacy', url = 'https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement' },
+  ]
+  [params.ui]
+    navbar_logo = true
+    navbar_theme = 'dark'
+    sidebar_menu_compact = true
+    sidebar_menu_foldable = true
+    sidebar_search_disable = true
+    breadcrumb_disable = false
+    showLightDarkModeMenu = true
+    feedback = { enable = false }
+    readingtime = { enable = false }
