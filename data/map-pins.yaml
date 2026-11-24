@@ -1,0 +1,23 @@
+# Pins on the home-page map. The node table itself lives in content/nodes/_index.md.
+# After editing, run `pixi run map` (the build also runs it) to redraw
+# assets/images/hero-map.svg with scripts/make_map.py.
+#
+# lat/lon: decimal degrees, north/east positive.
+pins:
+  - {name: Beijing, lat: 39.90, lon: 116.40}
+  - {name: Boulder, lat: 40.01, lon: -105.27}
+  - {name: Buenos Aires, lat: -34.60, lon: -58.38}
+  - {name: Busan, lat: 35.18, lon: 129.08}
+  - {name: Cape Town, lat: -33.92, lon: 18.42}
+  - {name: Cologne, lat: 50.94, lon: 6.96}
+  - {name: Darmstadt, lat: 49.87, lon: 8.65}
+  - {name: Leeds, lat: 53.80, lon: -1.55}
+  - {name: Lima, lat: -12.05, lon: -77.04}
+  - {name: Manila, lat: 14.60, lon: 120.98}
+  - {name: Princeton, lat: 40.35, lon: -74.66}
+  - {name: Sao Paulo, lat: -23.55, lon: -46.63}
+  - {name: Shanghai, lat: 31.23, lon: 121.47}
+  - {name: Sydney, lat: -33.87, lon: 151.21}
+  - {name: Yokohama, lat: 35.44, lon: 139.64}
+  - {name: Zurich, lat: 47.38, lon: 8.54}
+  - {name: Nairobi, lat: -1.29, lon: 36.82}

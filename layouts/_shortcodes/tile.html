@@ -1,0 +1,9 @@
+{{- /* Clickable card for the home page. Params: title, icon (Font Awesome,
+  e.g. fa-globe), ref (page path, resolved with relref). Inner: short text. */ -}}
+<div class="col-md-6 col-lg-3">
+  <a class="hk-tile" href="{{ relref .Page (.Get "ref") }}">
+    <i class="fas {{ .Get "icon" | default "fa-circle" }}" aria-hidden="true"></i>
+    <h3>{{ .Get "title" }}</h3>
+    <p>{{ .Inner | markdownify }}</p>
+  </a>
+</div>
