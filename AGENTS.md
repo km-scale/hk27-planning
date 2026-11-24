@@ -53,7 +53,8 @@ Pages. Toolchain (Hugo, Go, Node, Dart Sass, Python) is pinned in
   a *mean* stream is aggregated to every checked step coarser than its
   interval; an *inst* stream must also exist as means at its own interval
   and every checked coarser step, minus what its linked mean stream
-  ("Means in") already provides. A "Lock zoom" toggle makes all streams share one max zoom,
+  ("Means in") already provides. A zoom lock toggle (on by default) makes all
+  streams share one max zoom,
   driven by the "One global 2D field at zoom" input. Default rows: 1-year
   run, 3h atm means, daily ocean means, variable counts from the page's
   tables — update them if the tables change.

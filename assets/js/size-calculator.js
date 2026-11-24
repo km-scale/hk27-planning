@@ -340,7 +340,8 @@
      * locking applies the global field's zoom to all rows.
      */
     const lockBtn = container.querySelector("[data-action=lockzoom]");
-    let zoomLocked = false;
+    const LOCKED_BY_DEFAULT = true;
+    let zoomLocked = LOCKED_BY_DEFAULT;
     const zoomInputs = () => [...tbody.querySelectorAll("[data-key=zoom]")];
     function setAllZooms(z) {
       for (const input of zoomInputs()) input.value = z;
@@ -366,6 +367,9 @@
       tbody.replaceChildren();
       DEFAULT_ROWS.forEach(addRow);
       fieldZoom.value = DEFAULT_ROWS[0].zoom;
+      zoomLocked = LOCKED_BY_DEFAULT;
+      if (zoomLocked) setAllZooms(fieldZoom.value);
+      renderLock();
       for (const cb of ladderBox.querySelectorAll("input")) cb.checked = true;
       update();
     });
@@ -380,6 +384,7 @@
     container.addEventListener("change", update);
 
     DEFAULT_ROWS.forEach(addRow);
+    if (zoomLocked) setAllZooms(fieldZoom.value);
     update();
   }
 
