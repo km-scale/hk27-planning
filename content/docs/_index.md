@@ -1,4 +1,0 @@
----
-title: Docs
-type: docs
----

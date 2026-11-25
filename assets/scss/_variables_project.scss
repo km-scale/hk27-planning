@@ -1,0 +1,14 @@
+// HK25 hackathon look: slate blue, light blue, Open Sans + Roboto Slab.
+$primary: #627797;
+$secondary: #d6edff;
+$info: #8acbff;
+$dark: #2f3440;
+$blue: #3f5f8f; // Docsy mixes $blue into link colours of home-page boxes
+$link-color: $blue;
+
+$font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$headings-font-family: 'Roboto Slab', Georgia, serif;
+$headings-font-weight: 500;
+$td-enable-google-fonts: false; // fonts are self-hosted (_fonts.scss)
+
+$td-navbar-bg-color: $primary;

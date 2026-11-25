@@ -1,0 +1,6 @@
+{{- /* Override of Docsy's footer/center.html: copyright plus the links in
+  params.footerLinks (Legal Notice, Privacy). */ -}}
+{{ partial "footer/copyright.html" . -}}
+{{ range .Site.Params.footerLinks -}}
+  <span class="ms-2"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></span>
+{{- end }}

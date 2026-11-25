@@ -1,6 +1,8 @@
 ---
 title: Proposed Simulations
-weight: 2
+linkTitle: Simulations
+weight: 20
+aliases: [/docs/simulations/]
 ---
 
 ## Summary

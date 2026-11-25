@@ -20,21 +20,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          submodules: recursive
           fetch-depth: 0
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+      - name: Setup pixi (Hugo, Go, Node, Dart Sass, Python)
+        uses: prefix-dev/setup-pixi@v0.11.3
         with:
-          hugo-version: '0.165.0'
-          extended: true
+          pixi-version: v0.63.2
+          cache: true
+
+      - name: Install Docsy npm dependencies
+        run: pixi run npm-deps
+
+      - name: Lint and test scripts
+        run: pixi run lint && pixi run test
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
 
       - name: Build
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: pixi run build --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7

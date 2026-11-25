@@ -1,9 +1,10 @@
 ---
 title: Nodes participating
-weight: 1
+linkTitle: Nodes
+weight: 10
+aliases: [/docs/nodes/]
 ---
 
-# Nodes participating
 
 | Location| Country | Host Instituion | Data Center | Contact | Contact Email | Notes/Status |
 |---|---|---|---|---|---|---|
@@ -27,7 +28,7 @@ weight: 1
 | Nairobi | Kenya | | | | | |
 ||||||||
 
-# Other Collaborations
+## Other Collaborations
 
 | Location| Country | Host Instituion | Data Center | Contact | Contact Email | Notes/Status |
 |---|---|---|---|---|---|---|

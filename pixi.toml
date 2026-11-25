@@ -1,0 +1,23 @@
+[workspace]
+name = "hk27-planning"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+npm-deps = "npm ci --no-audit --no-fund"  # Bootstrap, Font Awesome for Docsy (package.json)
+map = "python scripts/make_map.py"  # data/map-pins.yaml -> assets/images/hero-map.svg
+serve = { cmd = "hugo server", depends-on = ["map"] }
+build = { cmd = "hugo --minify --panicOnWarning --logLevel warning", depends-on = ["map"] }
+test = "pytest -q scripts/tests"
+lint = "ruff check scripts && ruff format --check scripts"
+
+[dependencies]
+hugo = ">=0.165.0,<0.166"
+go = ">=1.27,<2"
+nodejs = ">=26,<27"
+dart-sass = ">=1.108.0,<2"
+python = ">=3.15.2,<3.16"
+pyyaml = ">=6.0.3,<7"
+pytest = ">=9.2.0,<10"
+ruff = ">=0.17.6,<0.18"

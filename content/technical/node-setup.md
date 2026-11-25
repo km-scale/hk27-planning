@@ -1,9 +1,9 @@
 ---
 title: Node Setup
-weight: 3
+weight: 10
+aliases: [/docs/node-setup/]
 ---
 
-# Node Setup
 
 This page describes the requirements and options for hosting a data node
 during the global hackathon.
@@ -20,7 +20,7 @@ community among attendees.
 ## Data access requirements
 
 Nodes should provide access to analysis-ready datasets with proper spatial and
-temporal chunking (see [technical concept]({{< relref "technical_concept" >}})).
+temporal chunking (see [technical concept]({{< relref "/technical" >}})).
 Data must be accessible via standard web servers and support fine-grained data
 access from remote locations, allowing participants to request specific subsets
 of variables, regions, or time ranges without downloading entire files.
@@ -35,7 +35,7 @@ more efficient than copying entire datasets. A reasonable ballpark for
 **locally cached data is between 100 TB and 1 PB**, though the exact amount
 depends on your expected user load and analysis focus.
 
-The [data request]({{< relref "data-request" >}}) page provides guidance
+The [data request]({{< relref "/simulations/data-request" >}}) page provides guidance
 on data volumes and structure so you can perform a back-of-the-envelope
 estimate yourself. We recommend testing your caching set-up well before
 the hackathon begins.

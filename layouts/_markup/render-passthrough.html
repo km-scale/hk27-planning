@@ -1,0 +1,4 @@
+{{- /* $...$ / $$...$$ (passthrough, hugo.toml) -> KaTeX HTML at build time.
+  Docsy's math partial sets Page.Store "hasMath", which makes Docsy load the
+  KaTeX CSS and fonts (served from the site, fetched at build time). */ -}}
+{{- partial "scripts/math.html" . -}}

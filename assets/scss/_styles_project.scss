@@ -1,0 +1,129 @@
+@import 'fonts';
+
+// Navbar: emblem on a white disc so it reads on the blue bar.
+.td-navbar .navbar-brand__logo svg {
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+.td-navbar .navbar-brand__name {
+  font-family: $headings-font-family;
+}
+
+// Navbar: section links right after the brand (Docsy pushes them right);
+// light/dark switch and search stay at the right end.
+@include media-breakpoint-up(md) {
+  .td-navbar .td-navbar-container .td-navbar-nav-scroll {
+    margin-left: 1rem !important;
+    flex-grow: 1;
+  }
+  .td-navbar .navbar-nav {
+    flex-grow: 1;
+  }
+  .td-navbar .td-navbar__light-dark-menu {
+    margin-left: auto;
+  }
+}
+
+// Wide tables (nodes, models) scroll instead of squeezing the page.
+.td-content table {
+  display: block;
+  overflow-x: auto;
+}
+
+// Home hero (layouts/_shortcodes/hero.html): text left, node map right.
+.hk-hero {
+  background: linear-gradient(180deg, #eef6ff 0%, #fff 100%);
+  padding: 3rem 0 1rem;
+
+  &__title {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    color: $dark;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    line-height: 1.1;
+  }
+  &__emblem {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+  }
+  &__lead {
+    font-size: 1.25rem;
+    color: $dark;
+  }
+  &__map svg {
+    width: 100%;
+    height: auto;
+  }
+  .pin {
+    transition: transform 0.15s;
+  }
+  .pin:hover path {
+    fill: $primary;
+  }
+}
+
+// Home sections after the hero: less air than Docsy's default blocks.
+.hk-hero ~ .td-box {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+// Home tiles (layouts/_shortcodes/tile.html).
+.hk-tile {
+  display: block;
+  height: 100%;
+  padding: 1.5rem;
+  border-top: 4px solid $primary;
+  border-radius: 0.5rem;
+  background: var(--bs-body-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  color: var(--bs-body-color);
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    color: var(--bs-body-color);
+  }
+  i {
+    color: $primary;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  p {
+    margin: 0;
+    opacity: 0.85;
+  }
+}
+
+// Dark mode.
+[data-bs-theme='dark'] {
+  .hk-hero {
+    background: linear-gradient(180deg, #232a36 0%, var(--bs-body-bg) 100%);
+  }
+  .hk-hero__title,
+  .hk-hero__lead {
+    color: var(--bs-body-color);
+  }
+  .hk-hero__emblem {
+    background: #fff;
+    border-radius: 50%;
+  }
+  .hk-hero .btn-outline-primary {
+    color: $info;
+    border-color: $info;
+  }
+  .hk-tile {
+    background: #2b3240;
+    border-top-color: $info;
+    i {
+      color: $info;
+    }
+  }
+}
