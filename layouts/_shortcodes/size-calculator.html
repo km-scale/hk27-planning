@@ -1,0 +1,93 @@
+{{- /* Interactive HEALPix dataset size calculator. Logic: assets/js/size-calculator.js */ -}}
+<div class="size-calc">
+  <div class="size-calc__globals">
+    <label>Compressed size (% of raw)
+      <input type="number" data-global="compression" value="50" min="1" max="100" step="any" />
+    </label>
+    <label>
+      <input type="checkbox" data-global="spatial" checked />
+      Include coarser zoom levels (spatial hierarchy, ≈ 4/3)
+    </label>
+    <span>Values: Float32 (4 bytes)</span>
+  </div>
+  <fieldset class="size-calc__ladder" data-global="ladder">
+    <legend>Mean hierarchy steps</legend>
+  </fieldset>
+  <p class="size-calc__field">
+    <label>One global 2D field at zoom
+      <input type="number" data-global="fieldzoom" value="8" min="0" max="15" step="1" />:
+      <strong data-out="field">—</strong>
+    </label>
+    <button type="button" data-action="lockzoom" aria-pressed="true">Zoom locked (same for all streams)</button>
+  </p>
+  <p class="size-calc__total">Total: <strong data-out="total">—</strong></p>
+  <div class="size-calc__scroll">
+    <table>
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="size-calc__error" data-out="error" role="status"></p>
+  <p>
+    <button type="button" data-action="add">Add stream</button>
+    <button type="button" data-action="reset">Reset to defaults</button>
+  </p>
+  {{- /* Shortcode HTML bypasses the passthrough render hook, so render math here (KaTeX CSS via "hasMath"). */ -}}
+  {{- $o := dict "output" "htmlAndMathml" -}}
+  {{- $cells := transform.ToMath "12\\cdot4^z" $o -}}
+  {{- $tm := transform.ToMath "\\tau_\\mathrm{m}" $o -}}
+  {{- $ti := transform.ToMath "\\tau_\\mathrm{i}" $o -}}
+  {{- .Page.Store.Set "hasMath" true }}
+  <p class="size-calc__help">
+    Cells per field: {{ $cells }} × domain fraction (column <em>Domain</em>; ocean ≈ 0.7, land ≈ 0.3).
+    Values per time step: #2D + #3D × #levels. Time steps: years / interval (unit h, d or mo)
+    (1 year = 365.25 days, 1 month = 1/12 year).
+    A <em>mean</em> stream at interval {{ $tm }} is also aggregated to every
+    checked hierarchy step coarser than {{ $tm }}. An <em>inst</em> stream at
+    {{ $ti }} must also be available as means at {{ $ti }} and at every
+    checked step coarser than it. If its variables are already part of a mean
+    stream, select that stream under <em>Means in</em>: only the mean
+    intervals it does not provide are added. Hover a row for its intervals.
+  </p>
+</div>
+{{- /* No .Page.Store "load once" guard: Store survives dev-server rebuilds, which would drop these tags. init() is idempotent. */ -}}
+  {{- with resources.Get "js/size-calculator.js" | minify | fingerprint -}}
+    <script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+  {{- end -}}
+  <style>
+    /* Bootstrap 5.3 / Docsy variables, so light and dark mode both work. */
+    .size-calc { border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); padding: 0.75rem 1rem; margin: 1rem 0; }
+    .size-calc p { margin: 0.5rem 0; }
+    .size-calc__globals, .size-calc__field { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; }
+    .size-calc__scroll { overflow-x: auto; }
+    .td-content .size-calc table { display: table; width: auto; font-size: 0.875em; margin: 0.5rem 0; }
+    .td-content .size-calc table :is(th, td) { padding: 0.25rem; vertical-align: middle; white-space: nowrap; }
+    .td-content .size-calc table th { font-weight: 600; line-height: 1.2; white-space: normal; }
+    .size-calc table input[type="number"] { width: 3.5em; -moz-appearance: textfield; appearance: textfield; }
+    .size-calc table input[type="number"]::-webkit-inner-spin-button,
+    .size-calc table input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    .size-calc table input[type="text"] { width: 7em; }
+    .size-calc__total { font-size: 1.25em; }
+    .size-calc__ladder { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); padding: 0.25rem 0.75rem 0.5rem; margin: 0.75rem 0; }
+    .size-calc__ladder legend { float: none; width: auto; font-size: inherit; font-weight: 600; padding: 0 0.25rem; margin: 0; }
+    .size-calc label { margin: 0; }
+    .size-calc input:not([type="checkbox"]), .size-calc select, .size-calc button {
+      background-color: var(--bs-body-bg); color: var(--bs-body-color);
+      border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius-sm);
+      font: inherit; padding: 0.1rem 0.3rem;
+    }
+    .size-calc input:focus, .size-calc select:focus, .size-calc button:focus-visible {
+      border-color: var(--bs-primary); outline: 0; box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+    }
+    .size-calc select:disabled { opacity: 0.5; }
+    .size-calc input[type="checkbox"] { accent-color: var(--bs-primary); }
+    .size-calc button { padding: 0.2rem 0.6rem; cursor: pointer; }
+    .size-calc button:hover { background-color: var(--bs-tertiary-bg); }
+    .size-calc table button { padding: 0.1rem 0.35rem; }
+    .size-calc button[aria-pressed="true"] { border-color: var(--bs-primary); background-color: var(--bs-primary-bg-subtle); color: var(--bs-primary-text-emphasis); }
+    .size-calc__globals input[type="number"], .size-calc__field input { width: 5em; }
+    .size-calc__size { text-align: right; }
+    .size-calc tr.size-calc--invalid td, .size-calc input.size-calc--invalid { outline: 1px solid var(--bs-danger); }
+    .size-calc__error { color: var(--bs-danger-text-emphasis); min-height: 1em; }
+    .size-calc__help { font-size: 0.875em; color: var(--bs-secondary-color); }
+  </style>

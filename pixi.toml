@@ -10,6 +10,7 @@ map = "python scripts/make_map.py"  # data/map-pins.yaml -> assets/images/hero-m
 serve = { cmd = "hugo server", depends-on = ["map"] }
 build = { cmd = "hugo --minify --panicOnWarning --logLevel warning", depends-on = ["map"] }
 test = "pytest -q scripts/tests"
+test-js = "node --test 'tests/*.test.js'"  # unit tests for assets/js
 lint = "ruff check scripts && ruff format --check scripts"
 
 [dependencies]
