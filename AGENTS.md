@@ -44,7 +44,9 @@ Pages. Toolchain (Hugo, Go, Node, Dart Sass, Python) is pinned in
 - Footer links: `params.footerLinks` in `hugo.toml`.
 - Size calculator: `{{< size-calculator >}}` (used in
   `content/simulations/data-request.md`) is a project shortcode at
-  `layouts/_shortcodes/size-calculator.html` (markup + CSS). Its logic lives
+  `layouts/_shortcodes/size-calculator.html` (markup + CSS on Bootstrap
+  `--bs-*` variables, so dark mode works; its help-text math goes through
+  `transform.ToMath`, as shortcode HTML skips the passthrough hook). Its logic lives
   in `assets/js/size-calculator.js` (vanilla JS, no deps; pure functions are
   also exported via `module.exports`, tested by `pixi run test-js`). Model:
   HEALPix `12·4^z` cells × domain fraction (optionally summed over coarser
