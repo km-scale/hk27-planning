@@ -149,8 +149,8 @@
     { id: "atm-mean", name: "Atm mean", zoom: 8, n2d: 34, n3d: 13, levels: 25, fraction: 1.0, intervalValue: 3, intervalUnit: "h", years: 1, kind: "mean", cover: "" },
     { id: "atm-inst", name: "Atm inst", zoom: 8, n2d: 9, n3d: 0, levels: 0, fraction: 1.0, intervalValue: 1, intervalUnit: "h", years: 1, kind: "inst", cover: "atm-mean" },
     { id: "ocean-mean", name: "Ocean mean", zoom: 8, n2d: 16, n3d: 8, levels: 33, fraction: 0.7, intervalValue: 1, intervalUnit: "d", years: 1, kind: "mean", cover: "" },
-    { id: "ocean-inst", name: "Ocean inst", zoom: 8, n2d: 7, n3d: 0, levels: 0, fraction: 0.7, intervalValue: 24, intervalUnit: "h", years: 1, kind: "inst", cover: "ocean-mean" },
-    { id: "land-mean", name: "Land mean", zoom: 8, n2d: 10, n3d: 3, levels: 6, fraction: 0.3, intervalValue: 1, intervalUnit: "month", years: 1, kind: "mean", cover: "" },
+    { id: "ocean-inst", name: "Ocean inst", zoom: 8, n2d: 7, n3d: 0, levels: 0, fraction: 0.7, intervalValue: 3, intervalUnit: "h", years: 1, kind: "inst", cover: "ocean-mean" },
+    { id: "land-mean", name: "Land mean", zoom: 8, n2d: 10, n3d: 3, levels: 6, fraction: 0.3, intervalValue: 1, intervalUnit: "d", years: 1, kind: "mean", cover: "" },
     { id: "land-inst", name: "Land inst", zoom: 8, n2d: 1, n3d: 0, levels: 0, fraction: 0.3, intervalValue: 3, intervalUnit: "h", years: 1, kind: "inst", cover: "land-mean" },
   ];
 

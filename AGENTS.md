@@ -58,7 +58,8 @@ Pages. Toolchain (Hugo, Go, Node, Dart Sass, Python) is pinned in
   ("Means in") already provides. A zoom lock toggle (on by default) makes all
   streams share one max zoom,
   driven by the "One global 2D field at zoom" input. Default rows: 1-year
-  run, 3h atm means, daily ocean means, variable counts from the page's
+  run, 3h atm means, daily ocean and land means, 1h/3h inst streams,
+  variable counts from the page's
   tables — update them if the tables change.
 - Dev-server gotcha: `.Page.Store` survives `hugo server` rebuilds, so
   "load once per page" guards built on it drop their output after the
