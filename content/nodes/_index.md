@@ -17,13 +17,13 @@ aliases: [/docs/nodes/]
 | Darmstadt	| Germany | EUMETSAT | EUMETSAT | Frank Kaspar | frank.kaspar@eumetsat.int  | |
 | Leeds (MO as backup) | UK	|	MetOffice/UoR |	JASMIN	 | PL Vidale / R Jones / M Mutzfeldeldt |	p.l.vidale@reading.ac.uk, mark.muetzelfeldt@reading.ac.uk | |
 | Lima | Peru | | | Laura Paccini | lpaccini@pucp.edu.pe | |
-| Manila | Philippines |	UP / PAGASA | |			Jane Delfino / Aleguen, Mary Cris |	rpdelfino@up.edu.ph, mary-cris.aleguen@mpimet.mpg.de | |
+| Manila | Philippines |	UP / PAGASA | |			Jane Delfino / Gerry Bagtasa / Aleguen, Mary Cris |	rpdelfino@up.edu.ph, gbagtasa@iesm.upd.edu.ph, mary-cris.aleguen@mpimet.mpg.de | |
 | Princeton | US | Princeton/GFDL | GFDL | Lucas Harris, Tim Merlis | lucas.harris@noaa.gov, tmerlis@princeton.edu | | 
 | Sao Paulo	| Brazil |	USP	USP/INPE | |	Rosmeri Porfirio Rocha |	rosmerir.rocha@iag.usp.br | |
 | Shanghai | China | Fudan University | | Libo Wu, Shan Guo, Xiansheng Wang | guoshan@sais.org.cn, wangxiansheng@sais.org.cn | Prof. Wu will lead. Guo and Xiansheng are local organization and contacts |
 | Sydney | Australia | UNSW/ARC Centre of Excellence | | Melissa Hart / Sam Green | melissa.hart@unsw.edu.au, sam.green@unsw.edu.au ||
 | Yokohama | Japan | JAMSTEC and Univ. Tokyo | JHPCN/mdx | Chihiro Kodama, Masaki Satoh | kodamac@jamstec.go.jp, satoh@aori.u-tokyo.ac.jp   | |
-| Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein | <andreas.prein@env.ethz.ch> | |
+| Zurich | Switzerland | ETH-Zurich	| CSCS (Swiss Supercomputing Center) | Andreas Prein / Anurag Dipankar | <andreas.prein@env.ethz.ch>, anurag.dipankar@c2sm.ethz.ch | |
 | | India | | | | | |
 | Nairobi | Kenya | | | | | |
 ||||||||
